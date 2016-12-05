@@ -1,6 +1,7 @@
 <?php
-
-// require_once('orm/Login.php');
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+require_once('orm/Login.php');
 
 $path_components = explode('/', $_SERVER['PATH_INFO']);
 
@@ -17,15 +18,15 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
       ($path_components[1] != "")) {
 
     // Interpret <id> as integer
-    $login_id = intval($path_components[1]);
+    $login_username = intval($path_components[1]);
 
     // Look up object via ORM
-    $login = Login::findByID($login_id);
+    $login = Login::findByName($login_username);
 
     if ($login == null) {
       // Login not found.
       header("HTTP/1.0 404 Not Found");
-      print("Login id: " . $login_id . " not found.");
+      print("Login username: " . $login_username . " not found.");
       exit();
     }
 
@@ -59,13 +60,13 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
       ($path_components[1] != "")) {
 
     //Interpret <id> as integer and look up via ORM
-    $Login_id = intval($path_components[1]);
-    $Login = Login::findByID($Login_id);
+    $Login_name = $path_components[1];
+    $Login = Login::findByName($Login_name);
 
     if ($Login == null) {
       // Login not found.
       header("HTTP/1.0 404 Not Found");
-      print("Login id: " . $Login_id . " not found while attempting update.");
+      print("Login name: " . $Login_name . " not found while attempting update.");
       exit();
     }
 //username,email,password
