@@ -23,8 +23,8 @@ class Login{
   		$this->username=$username;
   		$this->password=$password;
   		$this->success=$success;
-
   	}
+
 	public static function create($email,$username,$password){
 		$mysqli=Login::connect();
 		$result=$mysqli->query("insert into Login values (".
@@ -38,13 +38,12 @@ class Login{
 		}
 	}
 
-
 	public static function findByName($usn,$pswd){
 		$mysqli=Login::connect();
 		$result= $mysqli->query("select * from Login where username='".$usn."'");
 		if ($result) {
 			if($result->num_rows==0){
-				return null;
+				return new Login(null,null,$usn,$pswd,2);//
 			}
 			$rst_info=$result->fetch_array();
 			// $user_id=intval($rst_info['user_id']);
@@ -61,6 +60,7 @@ class Login{
 			
 		}
 	}
+
 	//public static function getAllIDs();
 	private function update(){
 		$mysqli=Login::connect();
