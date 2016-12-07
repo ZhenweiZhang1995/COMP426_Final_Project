@@ -25,18 +25,18 @@ class Login{
   		$this->success=$success;
   	}
 
-	public static function create($email,$username,$password){
-		$mysqli=Login::connect();
-		$result=$mysqli->query("insert into Login values (".
-				"'" . $mysqli->real_escape_string($username) . "', " .
-			     "'" . $mysqli->real_escape_string($email) . "', " .
-			     "'" . md5($mysqli->real_escape_string($password)) . "'"
-				);
-		if($result){
-			$id=$mysqli->insert_id;
-			return new Login($id,$email,$username,$password);
-		}
-	}
+	// public static function create($email,$username,$password){
+	// 	$mysqli=Login::connect();
+	// 	$result=$mysqli->query("insert into Login values (".
+	// 			"'" . $mysqli->real_escape_string($username) . "', " .
+	// 		     "'" . $mysqli->real_escape_string($email) . "', " .
+	// 		     "'" . md5($mysqli->real_escape_string($password)) . "'"
+	// 			);
+	// 	if($result){
+	// 		$id=$mysqli->insert_id;
+	// 		return new Login($id,$email,$username,$password);
+	// 	}
+	// }
 
 	public static function findByName($usn,$pswd){
 		$mysqli=Login::connect();
@@ -61,21 +61,21 @@ class Login{
 		}
 	}
 
-	//public static function getAllIDs();
-	private function update(){
-		$mysqli=Login::connect();
-    	$result = $mysqli->query("update Login set " .
-			     "email=" .
-			     "'" . $mysqli->real_escape_string($this->email) . "', " .
-			     "password=" .
-			     "'" . md5($mysqli->real_escape_string($this->password)) . "', " .
-			     " where username='" . $this->username)."'";
-    	return $result;
-	}
-	public function delete(){
-		$mysqli = Login::connect();
-    	$mysqli->query("delete from Login where username = " . $this->username);
-	}
+	// //public static function getAllIDs();
+	// private function update(){
+	// 	$mysqli=Login::connect();
+ //    	$result = $mysqli->query("update Login set " .
+	// 		     "email=" .
+	// 		     "'" . $mysqli->real_escape_string($this->email) . "', " .
+	// 		     "password=" .
+	// 		     "'" . md5($mysqli->real_escape_string($this->password)) . "', " .
+	// 		     " where username='" . $this->username)."'";
+ //    	return $result;
+	// }
+	// public function delete(){
+	// 	$mysqli = Login::connect();
+ //    	$mysqli->query("delete from Login where username = " . $this->username);
+	// }
 	public function getJSON(){
 		$json_obj = array('user_id' => $this->user_id,
 			      'email' => $this->email,
