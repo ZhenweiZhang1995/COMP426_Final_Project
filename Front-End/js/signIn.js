@@ -18,11 +18,11 @@
 				cache: false,
 	        	success: function(json){ 
 	            if(json.success==1){//登陆成功
-	                alert("log in success");
+	                alert("Log in success!");
 	            }else if(json.success==2){//未注册用户
-	            	alert("register first");
+	            	alert("Username not found!");
 	            }
-	            else{alert("fuck off");}
+	            else{alert("Password incorrect!");}
 		       }});
 		}
     }); 
