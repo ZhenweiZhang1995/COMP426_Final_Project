@@ -48,3 +48,15 @@
 	// });
 
 });
+
+
+ 
+$(document).keypress(function(e) {
+    if(e.which == 13) {
+         $("#register").click();
+         document.getElementById("username_reg").value= "";
+         document.getElementById("email_reg").value= "";
+         document.getElementById("password_reg").value= "";
+         document.getElementById("password2_reg").value= "";
+    }
+});

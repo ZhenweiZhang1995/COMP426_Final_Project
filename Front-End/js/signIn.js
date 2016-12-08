@@ -35,4 +35,14 @@
       $(".pr-wrap").removeClass("show-pass-reset");
     }); 
 
+
+
+});
+
+$(document).keypress(function(e) {
+    if(e.which == 13) {
+        $("#sign_in").click();
+        document.getElementById("username_login").value= "";
+        document.getElementById("password_login").value= "";
+    }
 });
