@@ -53,7 +53,7 @@ class Register{
 		if($num_res1->num_rows==0 && $num_res2->num_rows==0){
 			$result=$mysqli->query("insert into Login (username,email,password) values ('".
 				 $mysqli->real_escape_string($username) . "','" .
-			      $mysqli->real_escape_string($email) . "',' " .
+			      $mysqli->real_escape_string($email) . "','" .
 			       md5($mysqli->real_escape_string($password)) . "')"
 			);
 			if($result){

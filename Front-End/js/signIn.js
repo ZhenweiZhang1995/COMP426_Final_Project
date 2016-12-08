@@ -1,7 +1,7 @@
  $(document).ready(function () {
- 	 $('#login_form').on('submit', function (e) {
- 	 	var pass=$("#password").val();
- 	 	var user=$("#username").val();
+ 	 $('#sign_in').on('click', function (e) {
+ 	 	var pass=$("#password_login").val();
+ 	 	var user=$("#username_login").val();
 		e.stopPropagation();
 		e.preventDefault();
 
@@ -26,9 +26,6 @@
 		       }});
 		}
     }); 
-	$('#register_form').on('submit',function(e){
-		alert("hahah");
-	});
 
     $('.forgot-pass').click(function(event) {
       $(".pr-wrap").toggleClass("show-pass-reset");

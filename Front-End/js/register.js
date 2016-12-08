@@ -1,10 +1,10 @@
  $(document).ready(function () {
- 	 $('#register_form').on('submit', function (e) {
+ 	 $('#register').on('click', function (e) {
 
- 	 	var pass=$("#password").val();
- 	 	var user=$("#username").val();
- 	 	var email=$('#email').val();
- 	 	var pass2=$('#password2').val();
+ 	 	var pass=$("#password_reg").val();
+ 	 	var user=$("#username_reg").val();
+ 	 	var email=$('#email_reg').val();
+ 	 	var pass2=$('#password2_reg').val();
 
 		e.stopPropagation();
 		e.preventDefault();

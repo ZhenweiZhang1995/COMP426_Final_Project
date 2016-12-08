@@ -81,15 +81,15 @@
                         <!-- Username & Password Login form -->
 
                         <div class       ="social_login">
-                            <form>
+                            <form id="login_form">
                                 <label>Email / Username</label>
-                                <input type      ="text" id="username"/>
+                                <input type      ="text" id="username_login"/>
                                 <br />
                                 <br />
 
                                 <label>Password</label>
                                 <br />
-                                <input type      ="password" id="password"/>
+                                <input type      ="password" id="password_login"/>
                                 <br />
     
 
@@ -100,9 +100,9 @@
                                 <br />
 
                                 <div class       ="action_btns">
-                                    <div class       ="one_half"><a href="#" id="register_form" class="btn">Sign up</a></div>
+                                    <div class       ="one_half"><a href="#" id="register_button" class="btn">Sign up</a></div>
                                     <!-- <div class       ="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div> -->
-                                    <div class       ="one_half last"><a href="#" id="sing_in" class="btn btn_red">Login</a></div>
+                                    <div class       ="one_half last"><a href="#" id="sign_in" class="btn btn_red">Login</a></div>
                                 </div>
                             </form>
 
@@ -110,28 +110,28 @@
                         </div>
 
                         <!-- Register Form -->
-                        <div class       ="user_register">
-                            <form>
+                        <div class ="user_register">
+                            <form id="register_form">
                                 <label>Username</label>
-                                <input type      ="text" id="username"/>
+                                <input type      ="text" id="username_reg"/>
                                 <br />
 
                                 <label>Email Address</label>
-                                <input type      ="email" id="email"/>
+                                <input type      ="text" id="email_reg"/>
                                 <br />
 
                                 <label>Password</label>
-                                <input type      ="password" id="password"/>
+                                <input type      ="password" id="password_reg"/>
                                 <br />
 
                                 <label>Password Again</label>
-                                <input type      ="password2" id="password2"/>
+                                <input type      ="password" id="password2_reg"/>
                                 <br />
 
 
                                 <div class       ="action_btns">
                                     <div class       ="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
-                                    <div class       ="one_half last"><a href="#" id="register" class="btn btn_red">Register</a></div>
+                                    <div class       ="one_half last"><a href="" id="register" class="btn btn_red">Register</a></div>
                                 </div>
                             </form>
                         </div>
@@ -348,7 +348,7 @@
     $(function(){
 
         // Calling Register Form
-        $("#register_form").click(function(){
+        $("#register_button").click(function(){
             $(".social_login").hide();
             $(".user_register").show();
             $(".header_title").text('Register');
