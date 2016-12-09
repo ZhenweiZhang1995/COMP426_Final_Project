@@ -524,5 +524,6 @@ header .header-content .header-content-inner p {
     margin-right: 2%;
     display:inline;
     position: relative;
-    left: -5px;
+    left: -10px;
+    margin: -5px;
   }
