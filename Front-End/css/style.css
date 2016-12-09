@@ -508,3 +508,14 @@ header .header-content .header-content-inner p {
   .header_title{
     color:black;
   }
+
+  #contributors{
+      /*background:rgb(230,230,230);
+      background: transparent\9;
+      background:rgba(230,230,230,0.9);
+      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4ce6e6e6,endColorstr=#4ce6e6e6);
+      zoom: 1;*/
+      /*padding-top: 5%;
+      padding-bottom: 5%;*/
+      text-align: center;
+  }
