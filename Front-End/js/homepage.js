@@ -1,10 +1,10 @@
 //var designers = $('#brands');
 $(document).ready(function (){
 	load_product();
-	$("#product_button").on('click',function(e){
-		load_product();
-	});
-
+	// $("#product_button").on('click',function(e){
+	// 	load_product();
+	// });
+});
 // 	$("#search-product-btn").on('click',function(e) {
 // 		var target = $('#search-product').val();
 // 	$.ajax('../server-side/Designer_controller.php?search='+target,
@@ -62,7 +62,7 @@ $(document).ready(function (){
 var load_product = function(){
 	var products = $('#products');
 	products.empty();
-	$.ajax('../server-side/product.php/product',
+	$.ajax('../Back-End/product.php/product',
 	      { async: false,
 	      	type: "GET",
 		    dataType: "json",
@@ -76,28 +76,26 @@ var load_product = function(){
 };
 
 var load_product_info=function(id){
-	  $.ajax('../server-side/Product_controller.php/product/'+id,
+	  $.ajax('../Back-End/product.php/product/'+id,
   		{async: false,
   		type: "GET",
  		  dataType: "json",
  		  success: function(product_json) {
-				$('#products').append(
-					'<div class="col-lg-4 col-sm-6">'+
+				$('#products').append('<div class="col-lg-4 col-sm-6">'+
                     '<a href=" " class="portfolio-box">'+
-                        '< img src="img/product/'+product_json.pic_path+'" class="img-responsive" alt="img">'+
+                        '<img style="width:600px;height:300px" src="img/product/'+product_json.pic_path+'" class="img-responsive" alt="img">'+
                         '<div class="portfolio-box-caption">'+
                             '<div class="portfolio-box-caption-content">'+
                                 '<div class="project-category text-faded">'+
                                     product_json.product_name+
                                 '</div>'+
-                                '<div class="project-name">'+
+                                '<div class="project-name">Price: $'+
                                    product_json.price+
                                 '</div>'+
                             '</div>'+
                         '</div>'+
                     '</a >'+
-                '</div>'
-                            );
+                '</div>');
 			}
 
 
