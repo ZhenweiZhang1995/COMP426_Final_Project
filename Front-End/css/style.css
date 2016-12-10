@@ -528,3 +528,62 @@ header .header-content .header-content-inner p {
     /*//left: -10px;*/
     margin: 10px;
   }
+
+
+  #products ul {
+	margin: 1.5em 0;
+	padding: 0;
+	list-style: none;
+	overflow: hidden;
+}
+
+#products li {
+	float: left;
+	width: 30%;
+	margin: 0 1%;
+	display: block;
+}
+
+.product-image {
+	margin: 0 auto 1em auto;
+	background: red;
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	border-radius: 50%;
+
+}
+
+.product-description {
+	padding: 1em;
+	/*background: red;*/
+	color: black;
+	border-radius: 5px;
+}
+
+.product-name {
+	text-align: center;
+	color: black;
+	margin: 0;
+	font-size: 1.4em;
+	padding-bottom: 0.2em;
+	border-bottom: 1px dotted;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+.product-price {
+	width: 4em;
+	height: 4em;
+	font-size: 1.2em;
+	text-align: center;
+	margin: 1em auto;
+	background: white;
+	/*color: #800;*/
+	line-height: 4;
+	border-radius: 50%;
+}
+
+.add-to-cart .btn{
+  margin-left:35%;
+}
