@@ -140,7 +140,7 @@ body#checkout-page #site-info {
 }
 
 .shopping-cart {
-	border: 1px solid;
+/*	border: 1px solid;*/
 	border-collapse: collapse;
 	border-spacing: 0;
 	width: 100%;
@@ -151,14 +151,14 @@ body#checkout-page #site-info {
 	font-size: 1.1em;
 	padding: 0.3em;
 	width: 33.3%;
-	border: 1px solid ;
+/*	border: 1px solid ;*/
 	text-transform: uppercase;
 }
 
 .shopping-cart td {
 	padding: 0.3em;
 	width: 33.3%;
-	border: 1px solid ;
+/*	border: 1px solid ;*/
 }
 
 .shopping-cart tr:nth-child(even) {
