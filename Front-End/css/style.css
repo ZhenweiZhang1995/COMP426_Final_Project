@@ -551,6 +551,7 @@ header .header-content .header-content-inner p {
 	height: 150px;
 	overflow: hidden;
 	border-radius: 50%;
+  border: none;
 
 }
 
@@ -592,4 +593,9 @@ header .header-content .header-content-inner p {
 
 #test {
   background-color: #E0DEE0;
+}
+
+.product-image img{
+  width: 100%;
+  height:100%;
 }
