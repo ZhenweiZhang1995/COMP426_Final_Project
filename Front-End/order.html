@@ -1,0 +1,231 @@
+<head>
+    <!-- test -->
+    <meta charset    ="utf-8">
+    <meta http-equiv ="X-UA-Compatible" content="IE=edge">
+    <meta name       ="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Swap - Share your skill with the world</title>
+
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href       ="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href       ="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+    <link href       ='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href       ='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- CSS -->
+
+    <link type ="text/css" rel="stylesheet" href="css/style.css" />
+    <link type ="text/css" rel="stylesheet" href="css/shoppingcart.css" />
+
+
+    <!-- jQuery -->
+    <script src      ="vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src      ="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src      ="js/creative.min.js"></script>
+
+</head>
+
+
+<body id         ="page-top">
+
+    <nav id          ="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class       ="container-fluid">
+
+            <div class       ="navbar-header">
+                <button type     ="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class      ="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class         ="navbar-brand page-scroll" href="#page-top">Swap</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class       ="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class        ="nav navbar-nav navbar-left">
+                    <li>
+                        <a class         ="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class         ="page-scroll" href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a class         ="page-scroll" href="#portfolio">Portfolio</a>
+                    </li>
+                   <!--  <li>
+                        <a class         ="page-scroll" href="#contact">Contact</a>
+                    </li> -->
+                    <li>
+                        <a class         ="page-scroll" href="#credit">Our Team</a>
+                    </li>
+                </ul>
+
+                <ul class        ="nav navbar-nav navbar-right">
+                    <li>
+                        <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i>Shopping Cart</a>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header>
+        <div class       ="header-content">
+
+
+            <div id="content3">
+                <h1>Your Order</h1>
+                <table id="checkout-cart" class="shopping-cart">
+                  <thead>
+                    <tr>
+                        <th scope="col">Item</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <div id="pricing">
+
+                <p id="shipping">
+                    <strong>Shipping</strong>: <span id="sshipping"></span>
+                </p>
+
+                <p id="sub-total">
+                    <strong>Total</strong>: <span id="stotal"></span>
+                </p>
+            </div>
+
+            <div id="user-details">
+                <h2>Your Data</h2>
+                <div id="user-details-content"></div>
+            </div>
+
+
+
+
+            <form id="paypal-form" action="" method="post">
+                <input type="hidden" name="cmd" value="_cart" />
+                <input type="hidden" name="upload" value="1" />
+                <input type="hidden" name="business" value="" />
+
+                <input type="hidden" name="currency_code" value="" />
+                <input type="submit" id="paypal-btn" class="btn btn-primary" value="Pay with PayPal" />
+            </form>
+
+
+        </div>
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+    <div class       ="header-content-inner">
+        <!-- <h1 id           ="homeHeading">Swap</h1> -->
+                <!-- <img src="img/LOG.png" alt="Swap" height = "140px";>
+            </br>
+        </br>
+
+        <p>Share your skill with the world</p>
+        <a href          ="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+        <a id            ="modal_trigger" href="#modal" class="btn btn-primary btn-xl">Login/Register</a> -->
+
+        <div id          ="modal" class="popupContainer" style="display:none;">
+            <header class    ="popupHeader">
+                <span class      ="header_title">Login</span>
+                <span class      ="modal_close"><i class="fa fa-times"></i></span>
+            </header>
+
+            <section class   ="popupBody">
+
+                <!-- Username & Password Login form -->
+
+                <div class       ="social_login">
+                    <form id="login_form">
+                        <label>Email / Username</label>
+                        <input type      ="text" id="username_login"/>
+                        <br />
+                        <br />
+
+                        <label>Password</label>
+                        <br />
+                        <input type      ="password" id="password_login"/>
+                        <br />
+
+
+                        <div class       ="checkbox">
+                            <input id        ="remember" type="checkbox" />
+                            <label for       ="remember">Remember me </label>
+                        </div>
+                        <br />
+
+                        <div class       ="action_btns">
+                            <div class       ="one_half"><a href="#" id="register_button" class="btn">Sign up</a></div>
+                            <!-- <div class       ="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div> -->
+                            <div class       ="one_half last"><a href="#" id="sign_in" class="btn btn_red">Login</a></div>
+                        </div>
+                    </form>
+
+                    <a href          ="#" class="forgot_password">Forgot password?</a>
+                </div>
+
+                <!-- Register Form -->
+                <div class ="user_register">
+                    <form id="register_form">
+                        <label>Username</label>
+                        <input type      ="text" id="username_reg"/>
+                        <br />
+
+                        <label>Email Address</label>
+                        <input type      ="text" id="email_reg"/>
+                        <br />
+
+                        <label>Password</label>
+                        <input type      ="password" id="password_reg"/>
+                        <br />
+
+                        <label>Password Again</label>
+                        <input type      ="password" id="password2_reg"/>
+                        <br />
+
+
+                        <div class       ="action_btns">
+                            <div class       ="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+                            <div class       ="one_half last"><a href="" id="register" class="btn btn_red">Register</a></div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+
+
+</div>
+</header>
+
+
+</body>
+
+</html>
