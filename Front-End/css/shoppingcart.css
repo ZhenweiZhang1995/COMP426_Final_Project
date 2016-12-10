@@ -246,7 +246,7 @@ body#checkout-page #site-info {
 	width: 200px;
 	display: block;
 	background: #fff;
-	border: 1px solid;
+	border: 1px solid white;
 	border-radius: 4px;
 	padding: 0.3em;
 }
