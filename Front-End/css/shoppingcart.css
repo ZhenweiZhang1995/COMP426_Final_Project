@@ -136,7 +136,8 @@ body#checkout-page #site-info {
 }
 
 #shopping-cart {
-	margin: 1.5em 0;
+	margin:2%;
+
 }
 
 .shopping-cart {
@@ -327,7 +328,8 @@ body#checkout-page #site-info {
 }
 
 #content{
-	margin-top: -10%;
+	/*margin-top: -60%;*/
+	margin-left: -10%;
 	background:rgb(230,230,230);
     background: transparent\9;
     background:rgba(230,230,230,0.9);
@@ -335,6 +337,7 @@ body#checkout-page #site-info {
     zoom: 1;
     padding: 10%;
     border-radius: 20px;
+    width:120%;
 }
 
 #content h1,h2,h3{
