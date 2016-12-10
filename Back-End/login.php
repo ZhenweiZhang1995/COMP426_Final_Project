@@ -2,6 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 require_once('orm/Login.php');
+session_start();
 
 if (isset( $_SERVER['PATH_INFO'])) {
     $path_components = explode('/', $_SERVER['PATH_INFO']);

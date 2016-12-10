@@ -43,7 +43,7 @@ class Login{
 		$result= $mysqli->query("select * from Login where username='".$usn."'");
 		if ($result) {
 			if($result->num_rows==0){
-				return new Login(null,null,$usn,$pswd,2);//
+				return new Login(null,null,$usn,$pswd,2);//didn't find username
 			}
 			$rst_info=$result->fetch_array();
 			// $user_id=intval($rst_info['user_id']);
@@ -51,10 +51,10 @@ class Login{
 			// $user=$rst_info['username'];
 			$pass=$rst_info['password'];
 			if($pass==md5($pswd)){
-				return new Login(intval($rst_info['user_id']),$rst_info['email'],$rst_info['username'],$pass,1);
+				return new Login(intval($rst_info['user_id']),$rst_info['email'],$rst_info['username'],$pass,1);//Both Username and Password are correct
 			}
 			else{
-				return new Login(intval($rst_info['user_id']),$rst_info['email'],$rst_info['username'],$pass,0);
+				return new Login(intval($rst_info['user_id']),$rst_info['email'],$rst_info['username'],$pass,0);//password incorrect
 			}
 
 			
