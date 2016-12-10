@@ -312,13 +312,6 @@ body#checkout-page #site-info {
 	margin: 1.5em 0;
 }
 
-/*a.btn { text-align: center; text-decoration: none; margin-left: 50px; margin-right: 50px; margin-top: 5%; margin-bottom: 5%}*/
-
-/*#shopping-cart-actions li{
-	margin-left:1%;
-	margin-left:1%;
-}*/
-
 #sub-total{
 	color: black;
 }
@@ -348,5 +341,4 @@ body#checkout-page #site-info {
 #site{
 	margin-top: -20%;
 }
-
 

@@ -570,6 +570,7 @@ header .header-content .header-content-inner p {
 	border-bottom: 1px dotted;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
+  font-weight: 600;
 }
 
 .product-price {
@@ -584,6 +585,11 @@ header .header-content .header-content-inner p {
 	border-radius: 50%;
 }
 
-.add-to-cart .btn{
-  margin-left:35%;
+.add-to-cart .qty{
+  width:30px;
+  border: 1px white;
+}
+
+#test {
+  background-color: #E0DEE0;
 }
