@@ -9,13 +9,14 @@
     <meta name       ="viewport" content="width=device-width, initial-scale=1">
 
     <title>my account</title>
-
-
+   
 
     <!-- Bootstrap Core CSS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href       ="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
 
     <!-- Custom Fonts -->
     <link href       ="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -85,148 +86,59 @@
                     <br />
                     <br />
 
-
+                    <label>Product Image</label>
+                    <br>
                     <form action="upload.php" method="post" enctype="multipart/form-data">
                         Select image to upload:
+                        <br>
                         <input type="file" name="fileToUpload" id="fileToUpload">
+                        <br>
                         <input type="submit" value="Upload Image" name="submit">
-                    </form>
-                    <br />
-                    <br />
-
+                        </br>
+                        </br>
+                    </br>
                     <label>Category</label>
                     <br />
-                    <!-- Example single danger button -->
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action  <span class="caret"></span></button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <a class="dropdown-item" href="#">Separated link</a>
-                        </div>
+                    <div class="dropdown" id="category">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Please select the category of your skill
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Photography</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Tutoring piano</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Dog walking</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Others</a></li>
+                        </ul>
+                    </div> 
+                    <br />   
+                    <label>Seller Id</label>
+                    <br />
+                    <input type="text" placeholder="这里以后会用cookie解决，不用手动填" id="seller_id"/>
+                    <br />
+                    <br />
+                    <label>Price</label>
+                    <br />
+                    <input type="text" placeholder="$" id="price"/>
+                    <label>&nbsp;Dollars</label>
+                    <br />
+                    <br />
+                    <label>Description</label>
+                    <br />
+
+                    <textarea rows="10" cols="100" id="description" placeholder="">Please input the description of your skill
+                    </textarea>
+                    <br />
+                    <div class       ="action_btns">
+                        <a href="#" id="post_button" class="btn btn-primary">POST!</a>
                     </div>
-
-
-
-<div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
-    </ul>
-  </div>
-
-  <label>Seller Id</label>
-                                <br />
-
-
-
-
                 </form>
-            
-
-
-            </div>
-        </div>
-
-        
 
 
 
 
-
-
-
-        <div>
-        </br></br></br></br>
-            <h1>I wanna sell!</h1>
-        </div>
-         <div>
-            </br>
-            <p>For posting new product </p>
-            <p>These voilent delights have voilent ends.</p>
-            <p>现在这个页面打字会是白色的，看不出来，周雪帮忙调教一下啊</p> 
-
-                        <div>
-                            <form id="post_form">
-                                <label>Produc Image</label>
-                                <label>这个要做成upload图片，问问小明，他书上有</label>
-                                <br />
-                                <input type      ="text" id="img"/>
-                                <br />
-                                <br />
-
-                                <label>Produc Name</label>
-                                <br />
-                                <input type      ="text" id="product_name"/>
-                                <br />
-                                <br />
-
-                                <label>Category</label>
-                                <br />
-                                <label>这里能不能做成下拉菜单从几个选项里选的那种</label>
-                                <br />
-                                <input type      ="text" id="category"/>
-                                <br />
-                                <br />
-
-                                <label>Seller Id</label>
-                                <br />
-                                <input type="text" placeholder="这里以后会用cookie解决，不用手动填" id="seller_id"/>
-                                <br />
-                                <br />
-
-                                <label>Price</label>
-                                <br />
-                                <input type="text" placeholder="$" id="price"/>
-                                <label>&nbsp;Dollars</label>
-                                <br />
-                                <br />
-
-                                <label>Description</label>
-                                <br />
-                                <input type="text" placeholder="" id="description"/>
-                                <br />
-                                <br />
-
-
-
-
-                                <div class       ="action_btns">
-                                    <div class       ="one_half"><a href="#" id="post_button" class="btn">POST!</a></div>
-                                </div>
-                            </form>
-        </div>
-
-        <div>
-        </div>
-
-        <div class       ="header-content">
-            <div class       ="header-content-inner">
-
-
-
-                        
-                    </section>
-                </div>
             </div>
         </div>
     </header>
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
-    <script type="text/javascript" src="vendor/jquery/jquery.leanModal.min.js"></script>
-       <!-- Bootstrap Core JavaScript -->
-    <script src      ="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src      ="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script src      ="js/creative.min.js"></script>
+    
 
     <!-- Shopping Cart Javascript -->
     <script type="text/javascript" src="js/jquery.shop.js"></script>

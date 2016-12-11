@@ -72,20 +72,32 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <header>
-        <div>
-        </br></br></br></br>
-            <h1>My Account</h1>
-        </div>
-         <div>
-            </br>
-            <p>Welcome <span style="color:blue" id="BigUserName"></span> This is your SWAP account. </p>
-            <p>Browse through the following sections to manage your personal information, order history and post your skills.</p> 
-        </div>
 
-        <div>
+
+
+<!-- myaccount -->
+    <header>
+        <div class       ="header-content">
+            <div id="site">
+                <div id="content">
+                        <div>
+                            </br></br></br></br>
+                            <h1>My Account</h1>
+                        </div>
+
+                         <div>
+                            </br>
+                            <h4 style="color:black; line-height: 30px">Welcome to your SWAP account, <span style="color:blue" id="BigUserName"></span>. Browse through the following sections to manage your personal information, order history and post your skills.</h4> 
+                         </div>
+
+       
 <p>---------------------------------------------------</p>
-            <div id="UserInfo"></div>
+                        <div id="UserInfo">
+                            <h3 class="btn btn-primary" style="margin-top:-10px">Account information</h3></br></br>
+
+
+                        </div>
+            
             <!-- //下面的这些在js里面动态加入。但是id是一样的 -->
                <!-- '<h3>Account information</h3>'
                 '<p>Username: <span style="color:blue" id="UserName">'+username+'</span></p>'
@@ -94,25 +106,17 @@
                 '<p>Gender: <span style="color:blue" id="Gender">'+userInfo_json.gender+'</span></p>'
                 '<p>Phone: <span style="color:blue" id="Phone">'+userInfo_json.phone+'</span></p>'
                 '<p>Portrait: <span style="color:blue" id="Portrait">'+userInfo_json.portrait+'</span></p>' -->
+                
  <p>---------------------------------------------------</p>
-            <h3>Order history</h3></br>
-                 <table id = "history">
-                    <tr>
-                        <th>ID</th>
-                        <th>Title</th>              <!-- this is product name -->
-                        <th>Category</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                    </tr>
-                    <tr>
-                       <td>aa</td>
-                       <td>aasaaaaaaaaaaaaa</td>
-                       <td>blahblahbalhblah</td>
-                       <td>aa</td>
-                       <td>aa</td>
-                    </tr>
-                </table></br>
- <p>---------------------------------------------------</p>
+
+     <!--                    <div id="MyPost">
+                            <h3 class="btn btn-primary" style="margin-top:-10px">My posts</h3></br></br>
+                                <table id = "posts">
+                                    
+                                </table>
+                        </div> -->
+
+
             <h3>My posts</h3></br>
                 <table id = "posts">
                     
@@ -123,13 +127,22 @@
             <div class       ="header-content-inner">
 
 
+             <!-- <div class       ="header-content">
+                 <div class       ="header-content-inner">
+
 
                         
                     </section>
                 </div>
+            </div> -->
+                </div>
             </div>
         </div>
     </header>
+
+
+
+
     <!-- jQuery -->
     <script src      ="vendor/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="vendor/jquery/jquery.js"></script>

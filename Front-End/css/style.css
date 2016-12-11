@@ -627,3 +627,34 @@ th, td{
 	color: black;
 	font-weight: bold;
 }
+
+#post_form{
+  color: black;
+}
+
+#post_form label{
+  font-size: 120%;
+}
+
+#post_form textarea{
+  width: 60%;
+  /*margin-left: 20%;*/
+}
+
+.dropdown ul{
+  margin-left: 41%;
+  text-align: center;
+}
+
+.dropdown li:hover{
+  background-color: #FB7020;
+}
+
+#fileToUpload{
+  margin-left: 40%;
+}
+
+#post_button{
+  width: 50%;
+  margin-left: 25%;
+}

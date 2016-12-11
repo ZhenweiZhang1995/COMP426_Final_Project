@@ -30,11 +30,16 @@
  	 		alert("Username and password cannot contain white space.");
  	 	}
  	 	else{
-		$.ajax('../Back-End/register.php?action=register&email='+email+
-			"&user="+user+"&pass="+pass,
+		$.ajax(
 		       {type: 'POST',
-		        //url: "../Back-End/login.php?action=login", 
-		        //data: {"action":"login","user":user,"pass":pass}, 
+		        url: "../Back-End/register.php", 
+		        data:{
+		        	action: "register",
+		        	user: user,
+		        	pass: pass,
+		        	email: email
+		        },
+		        
 		       	datatype: "json",
 				cache: false,
 	        	success: function(json){ 
@@ -57,20 +62,16 @@
 		       }});
 		}
     }); 
-	// $('#register_form').on('submit',function(e){
-	// 	alert("hahah");
-	// });
-
 });
 
 
  
-$(document).keypress(function(e) {
-    if(e.which == 13) {
-         $("#register").click();
-         document.getElementById("username_reg").value= "";
-         document.getElementById("email_reg").value= "";
-         document.getElementById("password_reg").value= "";
-         document.getElementById("password2_reg").value= "";
-    }
-});
+// $(document).keypress(function(e) {
+//     if(e.which == 13) {
+//          $("#register").click();
+//          document.getElementById("username_reg").value= "";
+//          document.getElementById("email_reg").value= "";
+//          document.getElementById("password_reg").value= "";
+//          document.getElementById("password2_reg").value= "";
+//     }
+// });

@@ -35,17 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
           print($login->getJSON());
           exit();
       }
-    }
-    else{
-        // unset($_SESSION['username']);
-        // unset($_SESSION['authsalt']);
-        // unset($_SESSION['user_id']);
-        setcookie("username","",time()-(3600), '/Courses/comp426-f16/users');
-        setcookie("user_id","",time()-(3600), '/Courses/comp426-f16/users');
-        print($_COOKIE['username']);
-        exit();
-
-    }
+    }    }
   }
 }
 ?>
