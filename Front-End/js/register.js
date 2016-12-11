@@ -10,11 +10,24 @@
 		e.preventDefault();
 
  	 	if(user==""){
- 	 		alert("username please.");
+ 	 		alert("Username cannot be blank.");
  	 	}else if(pass==""){
- 	 		alert("password please.");
+ 	 		alert("Password cannot be blank.");
  	 	}else if(pass!=pass2){
- 	 		alert("consistency please");
+ 	 		alert("The password you typed in twice does not match.");
+ 	 	} else if (user.includes("&") || user.includes("=") || user.includes("<") ||
+ 	 			user.includes(">") || user.includes("+") || user.includes(",")){
+			alert("Username has invalid character.");
+ 	 	} else if (pass.length < 6){
+ 	 		alert("Password must contain at least 6 characters.");
+ 	 	} else if (!(/[a-z]/).test(pass)){
+ 	 		alert("Password must include one character from a-z.");
+ 	 	} else if (!(/[0-9]/).test(pass)){
+			alert("Password must include one digital number.");
+ 	 	} else if (!email.includes("@")){
+ 	 		alert("Email address is not valid.");
+ 	 	} else if (user.includes(" ")|| pass.includes(" ")){
+ 	 		alert("Username and password cannot contain white space.");
  	 	}
  	 	else{
 		$.ajax('../Back-End/register.php?action=register&email='+email+
