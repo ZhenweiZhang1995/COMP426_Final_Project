@@ -81,21 +81,19 @@ var load_product_info=function(id){
   		type: "GET",
  		  dataType: "json",
  		  success: function(product_json) {
-				$('#products').append('<div class="col-lg-4 col-sm-6">'+
-                    '<a href=" " class="portfolio-box">'+
-                        '<img style="width:600px;height:300px" src="img/product/'+product_json.pic_path+'" class="img-responsive" alt="img">'+
-                        '<div class="portfolio-box-caption">'+
-                            '<div class="portfolio-box-caption-content">'+
-                                '<div class="project-category text-faded">'+
-                                    product_json.product_name+
-                                '</div>'+
-                                '<div class="project-name">Price: $'+
-                                   product_json.price+
-                                '</div>'+
-                            '</div>'+
-                        '</div>'+
-                    '</a >'+
-                '</div>');
+				$('#products').append(
+'<li class="col-lg-3 col-md-9 text-center">'+
+'<div class="product-image"><img src="img/product/'+product_json.pic_path+'" alt="img" /></div>'+
+'<div class="product-description" data-name="'+product_json.product_name+'" data-price="'+product_json.price+'">'+
+'<h3 class="product-name">'+product_json.product_name+'</h3>'+
+'<p class="product-price">$ '+product_json.price+'</p>'+
+'<form class="add-to-cart" action="cart.html" method="post">'+
+'<div class = "qt">'+
+'<label for="qty-1">Quantity: </label>'+
+'<input type="text" name="qty-1" id="qty-1" class="qty" value="1" />'+
+'</div><br><p><input type="submit" value="Add to cart" class="btn btn-primary" /></p>'+
+'</form></div></li>'
+					);
 			}
 
 

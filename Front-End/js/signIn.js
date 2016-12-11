@@ -23,6 +23,7 @@
 	            if(json.success==1){//登陆成功
 	                alert("Log in success!");
 	                nav_login(getCookie("username"));
+	                location.reload(true);
 	            }else if(json.success==2){//未注册用户
 	            	alert("Username not found!");
 	            }
@@ -36,6 +37,7 @@
 		e.preventDefault();
 		document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/Courses/comp426-f16/users;domain=wwwp.cs.unc.edu";
 		document.cookie = "user_id=; expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/Courses/comp426-f16/users;domain=wwwp.cs.unc.edu";
+		location.reload(true);
  	 });
 });
 
@@ -47,6 +49,7 @@ var nav_login=function(username){
 		'<li><a href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Shopping Cart</a></li>'+
 		'<li id="logout_button"><a href="index.html">Sign out</a></li>'
 		);
+	$('#login_close').click();
 };
 
 var nav_logout=function(){
