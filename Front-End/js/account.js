@@ -4,18 +4,17 @@
 
 var load_account_info=function(){
 
-   $.ajax('../Back-End/login.php/'+1,
-    {cache:false,
-    type: "GET",
-     dataType: "json",
-     success: function(json) {
-    var username=json.username;
-    var email=json.email;
-   }
-  });	
+  //  $.ajax('../Back-End/login.php/'+1,
+  //   {cache:false,
+  //   type: "GET",
+  //    dataType: "json",
+  //    success: function(json) {
+  //   var username=json.username;
+  //   var email=json.email;
+  //  }
+  // });	
 
-
-   $.ajax('../Back-End/UserInfo.php/UserInfo/1',//currently can only get user number 1's information
+   $.ajax('../Back-End/userInfo.php/UserInfo/1',//currently can only get user number 1's information
     {async: true,
     type: "GET",
      dataType: "json",
