@@ -609,3 +609,21 @@ table{
 th, td{
   padding: 15px;
 }
+
+#content{
+	/*margin-top: -60%;*/
+	margin-left: -10%;
+	background:rgb(230,230,230);
+    background: transparent\9;
+    background:rgba(230,230,230,0.9);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4ce6e6e6,endColorstr=#4ce6e6e6);
+    zoom: 1;
+    padding: 10%;
+    border-radius: 20px;
+    width:120%;
+}
+
+#content h1,h2,h3{
+	color: black;
+	font-weight: bold;
+}

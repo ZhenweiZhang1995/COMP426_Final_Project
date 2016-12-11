@@ -7,14 +7,14 @@
     <meta charset    ="utf-8">
     <meta http-equiv ="X-UA-Compatible" content="IE=edge">
     <meta name       ="viewport" content="width=device-width, initial-scale=1">
-    <meta name       ="description" content="">
-    <meta name       ="author" content="">
 
     <title>my account</title>
 
 
 
     <!-- Bootstrap Core CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href       ="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -57,7 +57,7 @@
                         <a class         ="page-scroll" href="#credit">Our Team</a>
                     </li>
                     <li>
-                        <a class         ="page-scroll" href="#test">Test Product Page</a>
+                        <a class         ="page-scroll" href="#test">Products</a>
                     </li>
                 </ul>
 
@@ -74,6 +74,72 @@
     </nav>
 
     <header>
+        <div class       ="header-content">
+            <div id="content">
+                <h2 class        ="section-heading">POST MY SKILL</h2>
+                <hr class        ="primary">
+                <form id="post_form">
+                    <label>Produc Name</label>
+                    <br />
+                    <input type      ="text" id="product_name"/>
+                    <br />
+                    <br />
+
+
+                    <form action="upload.php" method="post" enctype="multipart/form-data">
+                        Select image to upload:
+                        <input type="file" name="fileToUpload" id="fileToUpload">
+                        <input type="submit" value="Upload Image" name="submit">
+                    </form>
+                    <br />
+                    <br />
+
+                    <label>Category</label>
+                    <br />
+                    <!-- Example single danger button -->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action  <span class="caret"></span></button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    </div>
+
+
+
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+    </ul>
+  </div>
+
+  <label>Seller Id</label>
+                                <br />
+
+
+
+
+                </form>
+            
+
+
+            </div>
+        </div>
+
+        
+
+
+
+
+
+
+
         <div>
         </br></br></br></br>
             <h1>I wanna sell!</h1>
