@@ -27,6 +27,7 @@
 	        	success: function(json){ 
 	            if(json==0){//regi success
 	                alert("Successfully registered");
+	                 $("#backbutton").click();
 	            }else if(json==1){//email redundent
 	            	alert("Email Already Exists");
 	            }else if(json==2){//username redundent
