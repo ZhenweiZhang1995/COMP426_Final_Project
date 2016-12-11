@@ -638,6 +638,7 @@ th, td{
 
 #post_form textarea{
   width: 60%;
+  border: 1px white;
   /*margin-left: 20%;*/
 }
 
