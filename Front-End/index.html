@@ -60,18 +60,12 @@
                     </li>
                 </ul>
 
-                <ul class        ="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="account.html">My Account</a>
-                    </li>
-                    <li>
-                        <a href="post.html">Post My Skill</a>
-                    </li>
+                <ul class="nav navbar-nav navbar-right" id="user_nav">
                     <li>
                         <a href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Shopping Cart</a>
                     </li>
                     <li>
-                        <a href="post.html">Sign out</a>
+                        <a id="nav_register_button" href="#modal">Sign in</a>
                     </li>
                 </ul>
 
@@ -428,6 +422,13 @@
             $(".social_login").hide();
             $(".user_register").show();
             $(".header_title").text('Register');
+            return false;
+        });
+        //calling register form from van bar
+        $("#nav_register_button").click(function(){
+            $(".user_register").hide();
+            $(".social_login").show();
+            $(".header_title").text('Login');
             return false;
         });
 
