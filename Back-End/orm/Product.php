@@ -23,12 +23,12 @@ class Product
 
 	public static function create($seller_id,$product_name,$price,$pic_path,$description,$category){
 		$mysqli=Product::connect();
-		$res=$mysqli->query("insert into Product (seller_id,product_name,price,pic_path,description,category) values (".$mysqli->real_escape_string($seller_id).",'".$mysqli->real_escape_string($product_name)."',".$mysqli->real_escape_string($price).",'".$mysqli->real_escape_string($pic_path)."','".$mysqli->real_escape_string($description)."','".$mysqli->real_escape_string($category)."'");
+		$res=$mysqli->query("insert into Product (seller_id,product_name,price,pic_path,description,category) values (".$seller_id.",".$mysqli->real_escape_string($product_name).",".$price.",".$mysqli->real_escape_string($pic_path).",".$mysqli->real_escape_string($description).",".$mysqli->real_escape_string($category).")");
 		if($res){
 			$product_id=$mysqli->insert_id;
-			return 1;//seccessfully created
+			return '1';//seccessfully created
 		}else{
-			return 0;
+			return '0';
 		}
 	}
 

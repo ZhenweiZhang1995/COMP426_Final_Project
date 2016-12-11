@@ -85,11 +85,15 @@
 
         <div>
 <p>---------------------------------------------------</p>
-            <h3>Account information</h3>
-                <p>Username: xxx</p>
-                <p>Email: xxx@xxx</p>
-                <p>Telephone: 13462457632457</p>
-                <p>Address: 308 Sunset Dr. Unit B</p>
+            <div id="UserInfo"></div>
+            <!-- //下面的这些在js里面动态加入。但是id是一样的 -->
+               <!-- '<h3>Account information</h3>'
+                '<p>Username: <span style="color:blue" id="UserName">'+username+'</span></p>'
+                '<p>Email: <span style="color:blue" id="Email">'+email+'</span></p>'
+                '<p>DOB: <span style="color:blue" id="DOB">'+userInfo_json.dob+'</span></p>'
+                '<p>Gender: <span style="color:blue" id="Gender">'+userInfo_json.gender+'</span></p>'
+                '<p>Phone: <span style="color:blue" id="Phone">'+userInfo_json.phone+'</span></p>'
+                '<p>Portrait: <span style="color:blue" id="Portrait">'+userInfo_json.portrait+'</span></p>' -->
  <p>---------------------------------------------------</p>
             <h3>Order history</h3></br>
                  <table id = "history">
@@ -119,11 +123,13 @@
                         <th>Price</th>
                     </tr>
                     <tr>
-                       <td>aa</td>
-                       <td>aasaaaaaaaaaaaaa</td>
-                       <td>blahblahbalhblah</td>
-                       <td>aa</td>
-                       <td>aa</td>
+                       <th id="SellerID">a</th>
+                        <th id="ProductID">b</th>
+                        <th id="ProductName">c</th>              <!-- this is product name -->
+                        <th id="Picture">d/th>
+                        <th id="Category">e</th>
+                        <th id="Description">f</th>
+                        <th id="Price">g</th>
                     </tr>
                 </table>
         </div>
@@ -139,6 +145,15 @@
             </div>
         </div>
     </header>
+    <!-- jQuery -->
+    <script src      ="vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+    <script type="text/javascript" src="vendor/jquery/jquery.leanModal.min.js"></script>
+
+    <!-- Login Database -->
+    <script type="text/javascript" src="js/account.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src      ="vendor/bootstrap/js/bootstrap.min.js"></script>
 
 
 </body>
