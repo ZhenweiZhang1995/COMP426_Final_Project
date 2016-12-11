@@ -40,7 +40,7 @@ var email;
                 '<p>DOB: <span style="color:blue" id="DOB">'+userInfo_json.dob+'</span></p>'+
                 '<p>Gender: <span style="color:blue" id="Gender">'+userInfo_json.gender+'</span></p>'+
                 '<p>Phone: <span style="color:blue" id="Phone">'+userInfo_json.phone+'</span></p>'+
-                '<p>Portrait: <span style="color:blue" id="Portrait">'+userInfo_json.portrait+'</span></p>'
+                '<p>Portrait: <span style="color:blue" id="Portrait"><img src="img/portrait/'+userInfo_json.portrait+'"></span></p>'
                 );
     
    }
@@ -67,7 +67,7 @@ var email;
                        '<th id="SellerID">'+product_json.seller_id+'</th>'+
                         '<th id="ProductID">'+product_json.product_id+'</th>'+
                         '<th id="ProductName">'+product_json.product_name+'</th>'+           
-                        '<th id="Picture">'+product_json.pic_path+'</th>'+
+                        '<th id="Picture"><img src="img/portrait/'+product_json.portrait+'"></th>'+
                         '<th id="Category">'+product_json.category+'</th>'+
                         '<th id="Description">'+product_json.description+'</th>'+
                         '<th id="Price">'+product_json.price+'</th>'+
