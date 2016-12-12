@@ -453,7 +453,7 @@ header {
   background-image: url('../img/header.jpg');
   background-attachment:fixed;
   text-align: center;
-  color: white;
+  color: black;
 }
 
 header .header-content {
@@ -657,4 +657,12 @@ th, td{
 #post_button{
   width: 50%;
   margin-left: 25%;
+}
+
+#test{
+  height:220%;
+}
+
+#site{
+  height:auto;
 }
