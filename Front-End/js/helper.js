@@ -17,7 +17,7 @@ var nav_logout=function(){
 		);
 };
 
-function getCookie(cname) {
+var getCookie=function(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
     for(var i = 0; i <ca.length; i++) {
@@ -30,12 +30,10 @@ function getCookie(cname) {
         }
     }
     return "";
-}
+};
 
-function deleteCookie(){
-	 	e.stopPropagation();
-		e.preventDefault();
+var deleteCookie=function(){
 		document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/Courses/comp426-f16/users;domain=wwwp.cs.unc.edu";
 		document.cookie = "user_id=; expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/Courses/comp426-f16/users;domain=wwwp.cs.unc.edu";
 		location.reload(true);
-}
+};

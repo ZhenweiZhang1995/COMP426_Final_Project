@@ -33,6 +33,8 @@
     }); 
  	 //next part doesnt work
  	 $('#logout_button').on('click',function(e){
+ 	 	e.stopPropagation();
+		e.preventDefault();
  	 	deleteCookie();
  	 });
 });
