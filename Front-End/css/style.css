@@ -453,7 +453,7 @@ header {
   background-image: url('../img/header.jpg');
   background-attachment:fixed;
   text-align: center;
-  color: white;
+  color: black;
 }
 
 header .header-content {

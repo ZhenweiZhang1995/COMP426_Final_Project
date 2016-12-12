@@ -282,8 +282,9 @@ body#checkout-page #site-info {
 }
 
 #user-details-content .detail {
-	float: left;
+	/*float: center;*/
 	width: 46%;
+	margin-left: 28%;
 }
 
 #user-details-content .detail.right {
