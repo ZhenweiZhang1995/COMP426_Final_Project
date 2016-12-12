@@ -28,12 +28,11 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 	} else {
 		$resource_type = $path_components[1]; // e.g. "product"
 		if ($resource_type == "product") {
-
-			if ((count($path_components) == 2)) {      // get all product ids
+			if ((count($path_components) == 2) && !isset($_GET['action'])) {      // get all product ids
 				header("Content-type: application/json");
 				print(json_encode(product::getIDs()));
 				exit();
-			} else {    // get a product's json
+			} else if((count($path_components) == 3)){    // get a product's json
 				$product_id = intval($path_components[2]);
 				$product = Product::getProductByID($product_id);
 				if ($product == null) {
@@ -44,6 +43,11 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 				header("Content-type: application/json");
 				print($product->getJSON());
 				exit();
+			}else if($_GET['action']=='query'){
+				$seller_id=$_COOKIE['user_id'];
+				$product=Product::getProductBySellerID($seller_id);
+				header("Content-type: application/json");
+				print($product->getJSON());
 			}
 		}
 	}

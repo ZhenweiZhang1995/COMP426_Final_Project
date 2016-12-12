@@ -29,13 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 	} else {
 		$resource_type = $path_components[1]; // e.g. "UserInfo"
 		if ($resource_type == "UserInfo") {
-
-			if ((count($path_components) == 2)) {      // get all UserInfo ids
-				header("Content-type: application/json");
-				print(json_encode(UserInfo::getIDs()));
-				exit();
-			} else {    // get a UserInfo's json
-				$UserInfo_id = intval($path_components[2]);
+   // get a UserInfo's json
+				$UserInfo_id = $_COOKIE['user_id'];
 				$UserInfo = UserInfo::getUserInfoByID($UserInfo_id);
 				if ($UserInfo == null) {
 					// UserInfo not found
@@ -45,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 				header("Content-type: application/json");
 				print($UserInfo->getJSON());
 				exit();
-			}
+			
 		}
 	}
 	

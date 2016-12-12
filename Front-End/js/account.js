@@ -1,31 +1,33 @@
+ var username;
+ var user_id;
+ var email;
  $(document).ready(function () {
+    username=getCookie("username");
+  user_id=getCookie("user_id");
+  if(username!=""){
+    nav_login(username);
+  }
  	load_account_info();
 });
 
 var load_account_info=function(){
 
-var username;
-var email;
    $.ajax(
     {type: "GET",
       url: '../Back-End/login.php',
       data:{
         action:'login',
-    user:'zhengyang',
-    pass:'123456'
+        user:username,
         },
       cache:false,
      dataType: "json",
      success: function(json) {
-    alert("gg");
     username=json.username;
-    alert(username);
     email=json.email;
-    alert(email);
    }
   });	
 
-   $.ajax('../Back-End/userInfo.php/UserInfo/1',//currently can only get user number 1's information
+   $.ajax('../Back-End/userInfo.php/UserInfo/',//currently can only get user number 1's information
     {async: true,
     type: "GET",
      dataType: "json",
@@ -48,11 +50,13 @@ var email;
 
    $.ajax(
     {type: "GET",
-      url: '../Back-End/product.php/product/1',
+      url: '../Back-End/product.php/product',
+      data:{
+        action:'query'
+      },
       cache:true,
      dataType: "json",
      success: function(product_json) {
-          alert(product_json.seller_id);
       $('#posts').append(
       '<tr>'+
                         '<th>SellerID</th>'+

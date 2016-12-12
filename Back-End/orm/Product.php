@@ -77,7 +77,6 @@ class Product
     	}
 
     	$product_info = $result->fetch_array();
-    	
     	$seller_id=$product_info['seller_id'];
 		$product_name=$product_info['product_name'];
 		$product_id=$product_info['product_id'];
@@ -91,6 +90,29 @@ class Product
     	}
 	}
 	
+	public static function getProductBySellerID($id) {
+		$mysqli = Product::connect();
+    	$result = $mysqli->query("select * from Product where seller_id = " . $id);
+	    if ($result) {
+	    	if ($result->num_rows == 0) {
+	    		return null;
+	    	}
+		}
+		$product_info = $result->fetch_array();
+    	$seller_id=$product_info['seller_id'];
+		$product_name=$product_info['product_name'];
+		$product_id=$product_info['product_id'];
+		$price=$product_info['price'];
+		$pic_path=$product_info['pic_path'];
+		$description=$product_info['description'];
+		$category=$product_info['category'];
+		
+     	return new Product($seller_id,$product_name,
+    		$product_id,$price,$pic_path,$description,$category);
+    	}
+
+
+
 	public function getJSON() {
 		$json = array(
 			  	"found"=>true,
