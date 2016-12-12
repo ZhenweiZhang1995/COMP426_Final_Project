@@ -8,16 +8,20 @@
     nav_login(username);
   }
  	load_account_info();
+     $('#logout_button').on('click',function(e){
+    e.stopPropagation();
+    e.preventDefault();
+    deleteCookie();
+   });
 });
 
 var load_account_info=function(){
 
    $.ajax(
     {type: "GET",
-      url: '../Back-End/login.php',
+      url: '../Back-End/userInfo.php',
       data:{
-        action:'login',
-        user:username,
+        action:'query'
         },
       cache:false,
      dataType: "json",
@@ -42,7 +46,7 @@ var load_account_info=function(){
                 '<p>DOB: <span style="color:blue" id="DOB">'+userInfo_json.dob+'</span></p>'+
                 '<p>Gender: <span style="color:blue" id="Gender">'+userInfo_json.gender+'</span></p>'+
                 '<p>Phone: <span style="color:blue" id="Phone">'+userInfo_json.phone+'</span></p>'+
-                '<p>Portrait: <span style="color:blue" id="Portrait"><img src="img/portrait/'+userInfo_json.portrait+'"></span></p>'
+                '<p>Portrait: <span style="color:blue" id="Portrait"><img src="'+userInfo_json.portrait+'"></span></p>'
                 );
     
    }

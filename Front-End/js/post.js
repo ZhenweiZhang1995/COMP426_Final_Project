@@ -17,6 +17,11 @@ $(document).ready(function (){
 		e.preventDefault();
 		post_info();
 	});
+	 	 $('#logout_button').on('click',function(e){
+ 	 	e.stopPropagation();
+		e.preventDefault();
+ 	 	deleteCookie();
+ 	 });
 });
 var post_info = function(){
 
