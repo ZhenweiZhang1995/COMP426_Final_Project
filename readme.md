@@ -10,4 +10,7 @@
 
 - before login, the sign in button on top right doesn't work, idk why
 - plz add bug here
+- different pages don't have the same nav bar
+- login/register popup should be redirected to login after click registerred
+
 
