@@ -1,6 +1,7 @@
  $(document).ready(function () {
  	if(getCookie("username")!=""){
  		nav_login(getCookie("username"));
+ 		$('#modal_trigger').remove();
  	}
  	 $('#sign_in').on('click', function (e) {
  	 	var pass=$("#password_login").val();
@@ -24,6 +25,7 @@
 	                alert("Log in success!");
 	                nav_login(getCookie("username"));
 	                location.reload(true);
+
 	            }else if(json.success==2){//未注册用户
 	            	alert("Username not found!");
 	            }
