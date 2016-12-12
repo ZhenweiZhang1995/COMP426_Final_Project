@@ -40,7 +40,7 @@ var load_account_info=function(){
       username
       );
     $('#UserInfo').append(
-         '<h3>Account information</h3>'+
+         '<h3 style="margin-top: -2px">Account information</h3>'+
                 '<p>Username: <span style="color:blue" id="UserName">'+username+'</span></p>'+
                 '<p>Email: <span style="color:blue" id="Email">'+email+'</span></p>'+
                 '<p>DOB: <span style="color:blue" id="DOB">'+userInfo_json.dob+'</span></p>'+
