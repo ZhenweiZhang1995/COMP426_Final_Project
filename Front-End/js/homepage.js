@@ -82,6 +82,7 @@ var load_product_info=function(id){
  		  dataType: "json",
  		  success: function(product_json) {
 				$('#products').append(
+'</br>' +
 '<li class="col-lg-3 col-md-9 text-center">'+
 '<div class="product-image"><img src="img/product/'+product_json.pic_path+'" alt="img" /></div>'+
 '<div class="product-description" data-name="'+product_json.product_name+'" data-price="'+product_json.price+'">'+
