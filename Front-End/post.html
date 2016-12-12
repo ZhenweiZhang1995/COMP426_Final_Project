@@ -80,52 +80,56 @@
                 <h2 class        ="section-heading" style="color:black;">POST MY SKILL</h2>
                 <hr class        ="primary">
                 <form id="post_form">
-                    <label>Produc Name</label>
                     <br />
-                    <input type      ="text" id="product_name"/>
+                    <label for ="product_name">Produc Name</label>
+                    <br />
+                    <input class="form-control" type="text" id="product_name"/>
                     <br />
                     <br />
 
-                    <label>Product Image</label>
+                    <label for ="fileToUpload">Product Image</label>
                     <br>
                     <form action="upload.php" method="post" enctype="multipart/form-data">
-                        Select image to upload:
                         <br>
-                        <input type="file" name="fileToUpload" id="fileToUpload">
+                        <input type="file" class="form-control-file" name="fileToUpload" id="fileToUpload">
+                        <small id="fileHelp" class="form-text text-muted">Please upload an image that is no larger than 1 MB</small>
                         <br>
-                        <input type="submit" value="Upload Image" name="submit">
+                        <!-- <input type="submit" value="Upload Image" name="submit"> -->
+                        <br>
+                        <button type="submit" class="btn btn-default" name="submit">Upload Image</button>
                         </br>
                         </br>
                     </br>
                     <label>Category</label>
                     <br />
-                    <div class="dropdown" id="category">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Please select the category of your skill
-                        <span class="caret"></span></button>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Photography</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Tutoring piano</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Dog walking</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Others</a></li>
-                        </ul>
+                    <div class="form-group">
+                        <!-- <label for="category">Please select the category of your skill</label> -->
+                        <select class="form-control" id="category">
+                            <option>Fund Zhenwei</option>
+                            <option>Tutoring piano</option>
+                            <option>Dog walking</option>
+                            <option>Photography</option>
+                            <option>Others</option>
+                        </select>
+                        <small id="categoryHelp" class="form-text text-muted">Please select the category of your skill</small>
                     </div> 
                     <br />   
-                    <label>Seller Id</label>
+                    <label for = "seller_id">Seller Id</label>
                     <br />
-                    <input type="text" placeholder="这里以后会用cookie解决，不用手动填" id="seller_id"/>
+                    <input class="form-control" type="text" placeholder="这里以后会用cookie解决，不用手动填" id="seller_id"/>
                     <br />
                     <br />
-                    <label>Price</label>
+                    <label for = "price">Price</label>
                     <br />
-                    <input type="text" placeholder="$" id="price"/>
+                    <input class="form-control" type="text" placeholder="$" id="price"/>
                     <label>&nbsp;Dollars</label>
                     <br />
                     <br />
-                    <label>Description</label>
-                    <br />
 
-                    <textarea rows="10" cols="100" id="description" placeholder="">Please input the description of your skill
-                    </textarea>
+                    <div class="form-group">
+                        <label for="comment">Description:</label>
+                        <textarea class="form-control" rows="10" cols="100" id="description" placeholder="Please input the description of your skill"></textarea>
+                    </div>
                     <br />
                     <div class       ="action_btns">
                         <a href="#" id="post_button" class="btn btn-primary">POST!</a>

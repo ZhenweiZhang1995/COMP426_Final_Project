@@ -636,9 +636,9 @@ th, td{
   font-size: 120%;
 }
 
-#post_form textarea{
-  width: 60%;
-  /*margin-left: 20%;*/
+.form-control {
+    margin-left: 20%;
+    width: 60%;
 }
 
 .dropdown ul{
