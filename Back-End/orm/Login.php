@@ -49,7 +49,7 @@ class Login{
 		$result= $mysqli->query("select * from Login where username='".$usn."'");
 		$rst_info=$result->fetch_array();
 		if($result->num_rows==1){
-			return new Login(intval($rst_info['user_id']),$rst_info['email'],$rst_info['username'],$pass,1);
+			return new Login(intval($rst_info['user_id']),$rst_info['email'],$rst_info['username'],$rst_info['password'],1);
 		}
 	}
 

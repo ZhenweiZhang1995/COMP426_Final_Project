@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if($_POST['action']=='register'){
       $email=$_POST['email'];
       $username=$_POST['user'];
-      $password=md5($_POST['pass']);//md5 encoding
+      $password=$_POST['pass'];//md5 encoding
       $register=Register::create($email,$username,$password);
       header("Content-type: application/json");
       print(json_encode("$register"));
