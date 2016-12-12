@@ -16,7 +16,7 @@ class UserInfo
 											"weijiandb"
 											);
 	}
-
+	
 	public static function getIDs() {
 		$mysqli = UserInfo::connect();
 
@@ -34,29 +34,6 @@ class UserInfo
 		return $id_array;
 	}
 
-	// public static function getUserInfoByphone($phone) {
-	// 	$mysqli = UserInfo::connect();
-
- //    	$result = $mysqli->query('select * from UserInfo where phone like "%'.$phone.'%"');
- //    	if ($result) {
- //    	if ($result->num_rows == 0) {
- //    		return null;
- //    	}
-
-	// 	$UserInfo_info = $result->fetch_array();
-    	
- //    	$gender = $UserInfo_info['gender'];
- //    	$user_id = $UserInfo_info['user_id'];
- //    	$dob = $UserInfo_info['dob'];
- //    	$portrait = $UserInfo_info['portrait'];
- //    	$phone = $UserInfo_info['phone'];
- //    	haha = $UserInfo_info['profile_path'];
- //    	haha = $UserInfo_info['Website'];
- //    	haha= $UserInfo_info['preview'];
-
- //    	return new UserInfo($gender,$user_id,$dob,$portrait,$phone,haha,haha,haha);
- //    	}
-	// }
 
 	public static function getUserInfoByID($id) {
 		$mysqli = UserInfo::connect();
