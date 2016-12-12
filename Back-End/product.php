@@ -12,20 +12,8 @@ if (isset($_SERVER['PATH_INFO'])) {
 }
 
 
+
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
-	if (count($path_components) == 0) {
-		$name = $_GET['search'];
-		$product = Product::getProductByName($name);
-		if ($product == null) {
-				// product not found
-				header("Content-type: application/json");
-				print(json_encode(array("found"=>false)));
-				exit();
-			}
-			header("Content-type: application/json");
-			print($product->getJSON());
-			exit();
-	} else {
 		$resource_type = $path_components[1]; // e.g. "product"
 		if ($resource_type == "product") {
 			if ((count($path_components) == 2) && !isset($_GET['action'])) {      // get all product ids
@@ -45,23 +33,20 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 				exit();
 			}else if($_GET['action']=='query'){
 				$seller_id=$_COOKIE['user_id'];
-				$product=Product::getProductBySellerID($seller_id);
+				$product=Product::getProductBySellerID($seller_id);//array of products
 				header("Content-type: application/json");
-				print($product->getJSON());
+				print(getArrayJSON($product));
 			}
 		}
-	}
-	
 } else if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$resource_type=$path_components[1];
 	if ($resource_type=='product') {
 		$img=$_POST['img'];
 		$product_name=$_POST['product_name'];
 		$category=$_POST['category'];
-		$seller_id=$_POST['seller_id'];
 		$description=$_POST['description'];
 		$price=$_POST['price'];
-		
+		$seller_id=$_COOKIE['user_id'];
 		$create=Product::create($seller_id,$product_name,$price,$img,$description,$category);
 
 		header("Content-type: application/json");
@@ -70,6 +55,21 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 	}
 }
 
-
+function getArrayJSON($arr){
+		$res_arr=array();
+		foreach ($arr as $object){
+			$res_arr[]=array(
+			  	"found"=>true,
+				"seller_id"=>$object->seller_id,
+				"product_name"=>$object->product_name,
+				"product_id"=>$object->product_id,
+				"price"=>$object->price,
+				"pic_path"=>$object->pic_path,
+				"description"=>$object->description,
+				"category"=>$object->category
+			);
+		}
+		return json_encode($res_arr);
+	}
 
 ?>

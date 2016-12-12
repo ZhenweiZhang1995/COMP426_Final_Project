@@ -5,7 +5,13 @@ var img;
 		var seller_id;
 		var price;
 		var description;
+		var username;
 $(document).ready(function (){
+	username=getCookie("username");
+  user_id=getCookie("user_id");
+  if(username!=""){
+    nav_login(username);
+  }
 	$('#post_button').on('click',function(e){
 		img=$('#img').val();
 		product_name=$('#product_name').val();
@@ -49,6 +55,7 @@ var post_info = function(){
 		      success: function(json) {
 		      	if(json==1){
 		      		alert('successfully posted');
+		      		window.location.href = "account.html";
 		      	}else{
 		      		alert('post failed');
 		      	}

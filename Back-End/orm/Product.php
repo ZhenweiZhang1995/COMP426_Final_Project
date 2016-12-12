@@ -5,13 +5,13 @@ date_default_timezone_set('America/New_York');
 
 class Product
 {
-	private $seller_id;
-	private $product_name;
-	private $product_id;
-	private $price;
-	private $pic_path;
-	private $description;
-	private $category;
+	public $seller_id;
+	public $product_name;
+	public $product_id;
+	public $price;
+	public $pic_path;
+	public $description;
+	public $category;
 	
 	public static function connect() {
 		return new mysqli("classroom.cs.unc.edu",
@@ -23,7 +23,9 @@ class Product
 
 	public static function create($seller_id,$product_name,$price,$pic_path,$description,$category){
 		$mysqli=Product::connect();
-		$res=$mysqli->query("insert into Product (seller_id,product_name,price,pic_path,description,category) values (".$seller_id.",".$mysqli->real_escape_string($product_name).",".$price.",".$mysqli->real_escape_string($pic_path).",".$mysqli->real_escape_string($description).",".$mysqli->real_escape_string($category).")");
+		$ss="insert into Product (seller_id,product_name,price,pic_path,description,category) values (".$seller_id.",'".$mysqli->real_escape_string($product_name)."',".$price.",'".$mysqli->real_escape_string($pic_path)."','".$mysqli->real_escape_string($description)."','".$mysqli->real_escape_string($category)."')";
+		
+		$res=$mysqli->query($ss);
 		if($res){
 			$product_id=$mysqli->insert_id;
 			return '1';//seccessfully created
@@ -91,6 +93,7 @@ class Product
 	}
 	
 	public static function getProductBySellerID($id) {
+		$product_arr=array();
 		$mysqli = Product::connect();
     	$result = $mysqli->query("select * from Product where seller_id = " . $id);
 	    if ($result) {
@@ -98,19 +101,21 @@ class Product
 	    		return null;
 	    	}
 		}
-		$product_info = $result->fetch_array();
-    	$seller_id=$product_info['seller_id'];
-		$product_name=$product_info['product_name'];
-		$product_id=$product_info['product_id'];
-		$price=$product_info['price'];
-		$pic_path=$product_info['pic_path'];
-		$description=$product_info['description'];
-		$category=$product_info['category'];
-		
-     	return new Product($seller_id,$product_name,
-    		$product_id,$price,$pic_path,$description,$category);
+		for($i=0;$i<$result->num_rows;$i++){
+			$product_info = $result->fetch_array();
+	    	$seller_id=$product_info['seller_id'];
+			$product_name=$product_info['product_name'];
+			$product_id=$product_info['product_id'];
+			$price=$product_info['price'];
+			$pic_path=$product_info['pic_path'];
+			$description=$product_info['description'];
+			$category=$product_info['category'];
+			
+     		$product_arr[]= new Product($seller_id,$product_name,$product_id,$price,$pic_path,$description,$category);
     	}
-
+    	// print($result->num_rows);
+    	return $product_arr;
+    }
 
 
 	public function getJSON() {
