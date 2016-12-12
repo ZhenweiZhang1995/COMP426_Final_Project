@@ -146,6 +146,7 @@ body#checkout-page #site-info {
 	border-spacing: 0;
 	width: 100%;
 	table-layout: fixed;
+	color: black;
 }
 
 .shopping-cart th {
