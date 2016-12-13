@@ -87,6 +87,15 @@ class UserInfo
     		return "0";
     	}
 	}
+	public static function create($name){
+		$mysqli = UserInfo::connect();
+    	$result = $mysqli->query("insert into UserInfo (dob,gender,phone,portrait,user_id) values('0000-00-00','','','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi7KWKXXrylyExzMj7TxaYyDrlO4W4-f4Blaf9y42R3r48Jp05',(select user_id from Login where username ='".$name."'))");
+    	if($result){
+    		return "1";
+    	}else{
+    		return "0";
+    	}
+	}
 	public function getJSON() {
 		$json = array(
 				"gender"=>$this->gender,

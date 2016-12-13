@@ -19,9 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
       $login=Login::findByName($username,$password);
       if ($login==null) {
         header("HTTP/1.0 404 NOT FOUND");
-        // unset($_SESSION['username']);
-        // unset($_SESSION['authsalt']);
-        // unset($_SESSION['user_id']);
 
         print("Student firstname: ".$_GET['first_name']." not found!");
         exit();
